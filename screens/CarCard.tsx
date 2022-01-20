@@ -19,7 +19,7 @@ export default function CarCard(props: any) {
           }}
         />
           <View style={{marginTop:5, marginLeft: 21, flexDirection: "column",}}>
-            <View style={{padding: 3, flexDirection: "row"}}>
+            <View style={{padding: 3, flexDirection: "row", flexWrap: "wrap"}}>
               <Text style={{fontWeight: "300"}}>{props.item.MakeName ? props.item.MakeName : ''}{props.item.Make_Name ? props.item.Make_Name : ''} </Text>
               <Text style={{fontWeight: "200"}}>{props.item.ModelName ? props.item.ModelName : ''}{props.item.Model_Name ? props.item.Model_Name : ''}</Text>
             </View>
