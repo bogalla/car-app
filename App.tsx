@@ -1,8 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import axios from "axios"; 
-import useCachedResources from './hooks/useCachedResources';
-import useColorScheme from './hooks/useColorScheme';
 import { Button, ThemeProvider, Text } from 'react-native-elements';
 import MainPage from './screens/MainPage';
 import { Component } from 'react';
