@@ -1,22 +1,33 @@
 import { StatusBar } from 'expo-status-bar';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
-
+import axios from "axios"; 
 import useCachedResources from './hooks/useCachedResources';
 import useColorScheme from './hooks/useColorScheme';
-import Navigation from './navigation';
+import { Button, ThemeProvider, Text } from 'react-native-elements';
+import MainPage from './screens/MainPage';
+import { Component } from 'react';
 
-export default function App() {
-  const isLoadingComplete = useCachedResources();
-  const colorScheme = useColorScheme();
+axios.defaults.timeout = 30000;
 
-  if (!isLoadingComplete) {
-    return null;
-  } else {
+const theme = {
+  Button: {
+    raised: true,
+  },
+};
+
+class App extends Component {
+  constructor(props: {}) {
+    super(props);
+  }
+  render () {
     return (
       <SafeAreaProvider>
-        <Navigation colorScheme={colorScheme} />
-        <StatusBar />
+        <ThemeProvider>
+          <MainPage/>
+        </ThemeProvider>
       </SafeAreaProvider>
     );
   }
 }
+
+export default App;
